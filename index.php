@@ -4,6 +4,7 @@
 	<title>Bacery-online</title>
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
+<h1>Bacery-Online</h1>
 <body>
 <table id="hand-made">
 		<thead>
@@ -93,7 +94,7 @@
 				</tr>
 			</tbody>
 	</table>
-	
+
 <?php  
 @include_once('app/app.php');
 ?>
