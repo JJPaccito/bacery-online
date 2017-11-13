@@ -4,9 +4,8 @@
 	<title>Bacery-online</title>
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
-<h1>Bacery-Online</h1>
 <body>
-<table id="Informacija">
+<table id="hand-made">
 		<thead>
 			<tr>
 				<th rowspan="2">Pavadinimas</th>
@@ -94,131 +93,8 @@
 				</tr>
 			</tbody>
 	</table>
-<script type="text/javascript">
-
-	//Oprion ONE;
-
-	var _arrayOfObjects = [
-		{
-			"date":"2017-11-09",
-			"product":"Agouninė",
-			"data": [5, 20, 19, 4, 2]
-		},
-		{
-			"date":"2017-11-10",
-			"product":"Varškės",
-			"data": [3, 28, 28, 2, 4]
-		},
-	];
-
-	// Option TWO sort by date
-
-	var _objectByDate = {
-		"2017-11-09" :
-		[
-			{
-				"product":"Agouninė",
-				"data": [5, 20, 19, 4, 2]
-			},
-			{
-				"product":"Varškės",
-				"data": [3, 28, 28, 2, 4]
-			},
-		],
-		"2017-11-10" :
-		[
-			{
-				"product":"Agouninė",
-				"data": [5, 20, 19, 4, 2]
-			},
-			{
-				"product":"Varškės",
-				"data": [3, 28, 28, 2, 4]
-			},
-		],
-	};
-
-	// Option THREE sort by product
-
-	var _objectByProduct = {
-		"Agouninė" :
-		[
-			{
-				"date":"2017-11-09",
-				"data": [5, 20, 19, 4, 2]
-			},
-		],
-		"Varškės" :
-		[
-			{
-				"date":"2017-11-09",
-				"data": [5, 20, 19, 4, 2]
-			},
-		],
-	};
-
-
-	console.log(_arrayOfObjects);
-	console.log(_objectByDate);
-	console.log(_objectByProduct);
-
-	//Option Four 
-
-	var _optimisedByDate = {
-		"2017-11-09" :
-		{
-			"Varškės": [5, 20, 19, 4, 2],
-			"Agouninė":[5, 20, 19, 4, 2],
-		},
-	};
-
-	//Option Five
-
-	var _optimisedByProduct = {
-		"Agouninė" :
-		{
-			"2017-11-09": [5, 20, 19, 4, 2],
-			"2017-11-10": [5, 20, 19, 4, 2],
-		},
-	};
-
-	console.log(_optimisedByDate);
-	console.log(_optimisedByProduct);
-
-	//Option SIX//
-
-	var _products = {
-		"p-1":"Agouninė",
-		"p-2":"Varškės",
-	};
-
-	var _ByProduct = {
-		"p-1" :
-		{
-			"2017-11-09": [5, 20, 19, 4, 2],
-			"2017-11-10": [5, 20, 19, 4, 2],
-		},
-		"p-2" :
-		{
-			"2017-11-09": [5, 20, 19, 4, 2],
-			"2017-11-10": [5, 20, 19, 4, 2],
-		},
-	};
-	var _ByDate = {
-		"2017-11-09" :
-		{
-			"p-1": [5, 20, 19, 4, 2],
-			"p-2": [5, 20, 19, 4, 2],
-		},
-		"2017-11-10" :
-		{
-			"p-1": [5, 20, 19, 4, 2],
-			"p-2": [5, 20, 19, 4, 2],
-		},
-	};
-
-	console.log(_products);
-	console.log(_ByProduct);
-</script>
+<?php  
+@include_once('app/app.php');
+?>
 </body>
 </html>
