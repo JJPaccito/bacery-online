@@ -93,8 +93,10 @@
 				</tr>
 			</tbody>
 	</table>
+	
 <?php  
 @include_once('app/app.php');
 ?>
+
 </body>
 </html>
