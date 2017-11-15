@@ -28,7 +28,7 @@
 		</thead>
 			<tbody>
 				<tr>
-					<td>Agouninė</td>
+					<td>Varškės</td>
 					<td>5</td>
 					<td>20</td>
 					<td>19</td>
@@ -41,7 +41,7 @@
 					<td>2</td>
 				</tr>
 				<tr>
-					<td>Varškės</td>
+					<td>Aguoninė</td>
 					<td>3</td>
 					<td>28</td>
 					<td>25</td>

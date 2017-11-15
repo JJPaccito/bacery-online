@@ -1,23 +1,22 @@
 <?php
-
-$days = $keys ='';
-
+$days = $keys =''; //kodel yra sis uzrasas? ir ka jis reiskia? kokios jo funkcijos?
+$rows = [];
 	foreach ($data as $key => $value) {
 		$days .= "<th colspan=\"5\">$key</th>";
 		$keys .= "<th>VL</th><th>PG</th><th>PR</th><th>SG</th><th>GL</th>";
-
 		foreach ($value as $name => $data) {
-			# code...
-		// name         //data
-	//	"Agouninė" => [5, 20, 19, 4, 2],
+			If (!isset($rows[$name]))
+			{
+				$rows[$name] = "<td>$name</td>";
+			}
+			foreach ($data as $amount) {
 
-	//		foreach ($data as $amount) {			//nd
-				# code...
+				$rows[$name] .= ("<td>$amount</td>");
 			}
 		}
 	}
-?>
 
+?>
 <table>
 		<thead>
 			<tr>
@@ -32,20 +31,12 @@ $days = $keys ='';
 				?>
 			</tr>
 		</thead>
+			<tbody>
+				<?php
+					foreach ($rows as $row) {
+						echo '<tr>' . $row . '</tr>';
+					}
+				?>
+			</tbody>
 </table>
 
-
-
-<?php
-return;
-var_dump($data);
-
-$html = '';
-
-$html .= '<table>';
-$html .= '<thead>';
-
-$html .= '</thead>';
-$html .= '</table>';
-
-echo $html;
