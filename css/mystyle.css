@@ -14,7 +14,12 @@ table, tr, th, td {
 }
 
 
-#hand-made 
+.button_class
 {
-	display: none;
+	margin: 20px;
+}
+
+.fomr-label
+{
+	width: 100px;
 }
