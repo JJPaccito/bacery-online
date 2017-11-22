@@ -1,6 +1,9 @@
 <?php
+
 $days = $keys =''; //kodel yra sis uzrasas? ir ka jis reiskia? kokios jo funkcijos?
 $rows = []; 
+
+ksort($DATA);
 
 $product_name = json_decode(file_get_contents('data/product_name.json'), true );
 
