@@ -7,9 +7,9 @@
 <body style="text-align: center;">	
 	<form method="POST" action="create.php">
 		<div>Data</div>
-			<input type="date" name="DATA">
+			<input type="date" name="date">
 		<div>Prekė</div>
-			<select name="product">
+			<select name="product_id">
 <?php
 		
 	$product_name = json_decode(file_get_contents('data/product_name.json'), true );
@@ -21,16 +21,17 @@
 ?>
 			</select>>
 		<div>Vakarikštis likutis</div>
-			<input type="number" name="VL">
+			<input type="number" name="inicial">
 		<div>Pagamintas kiekis</div>
-			<input type="number" name="PG">
+			<input type="number" name="produced">
 		<div>Parduotas kiekis</div>
-			<input type="number" name="PR">
+			<input type="number" name="sold">
 		<div>Sugadinta kiekis</div>
-			<input type="number" name="SG">
+			<input type="number" name="damaged">
 		<div>Galutinis likutis</div>
-			<input type="number" name="GL"><br>
+			<input type="number" name="closed"><br>
 		<input type="submit" value="Išsaugoti duomenis">
+
 	</form>
 	<a href="index.php">HOME</a>
 
