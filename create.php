@@ -20,29 +20,33 @@ if (!$validData)
 	return;
 
 @include_once('app/database.php');
+$query = db_insertQuery('bakery_products_history',$new_data, true);
 
-$query = "INSERT INTO `bakery_products_history` (
-		`Date`, 
-		`product_id`,
-		`inicial`, 
-		`produced`, 
-		`sold`, 
-		`damaged`, 
-		`closed`) 
-		VALUES (
-		".$new_data['Date'].",
-		".$new_data['product_id'].",
-		".$new_data['inicial'].",
-		".$new_data['produced']. ",
-		".$new_data['sold']. ",
-		".$new_data['damaged'].",
-		".$new_data['closed'].")";
-die($query);
 
-$result = db_query($query);
 
-print_r($result);
-;
+
+// $query = "INSERT INTO `bakery_products_history` (
+// 		`Date`, 
+// 		`product_id`,
+// 		`inicial`, 
+// 		`produced`, 
+// 		`sold`, 
+// 		`damaged`, 
+// 		`closed`) 
+// 		VALUES (
+// 		".$new_data['Date'].",
+// 		".$new_data['product_id'].",
+// 		".$new_data['inicial'].",
+// 		".$new_data['produced']. ",
+// 		".$new_data['sold']. ",
+// 		".$new_data['damaged'].",
+// 		".$new_data['closed'].")";
+// die($query);
+
+// $result = db_query($query);
+
+// print_r($result);
+// ;
 /*//
 $existing_data = json_decode (file_get_contents('data/bakery-data.json'));
 $existing_data = objectToArray($existing_data);

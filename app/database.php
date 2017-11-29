@@ -25,12 +25,24 @@ function db_query(string $query)
 	return $result;
 }
 
-$query = "SELECT `id`, `name` FROM `bakery_products` ORDER BY `name`ASC";
 
-$result = db_query($query);
-foreach ($result as $key => $value) 
+// duomenu ikelimas 
+function db_insertQuery(string $tableName, array $data, bool $uuid = false) : string
 {
-	print_r($value);
+	if ($uuid)
+		$data['id'] = uniqid(36);
+	
+	print_r($data);
+
+	$keys = $values = '';
+	foreach ($data as $key => $value) {
+		$keys .="`$key`, ";
+		$values .="'$value', ";
+	}
+	$keys = rtrim($keys, ", ");
+	$values = rtrim($values, ", ");
+
+	$query = "INSERT INTO `$tableName` ($keys) VALUES ($values)";
+
+	die($query);
 }
-
-
