@@ -7,14 +7,14 @@
 <body style="text-align: center;">	
 	<form method="POST" action="create.php">
 		<div>Data</div>
-			<input type="date" name="date">
+			<input type="date" name="Date">
 		<div>Prekė</div>
 			<select name="product_id">
 <?php
 		
 	@include_once('app/database.php');
 
-	$query = "SELECT `id`, `name` FROM `bakery_products` WHERE `deleted_at` IS NULL ORDER BY `name`ASC ";
+	$query = "SELECT `id`, `name` FROM `bakery_products` WHERE `deleted_at` IS NULL ORDER BY `name` ASC";
 
 	$result = db_query($query);
 	foreach ($result as $value) 

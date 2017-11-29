@@ -2,7 +2,7 @@
 
 $new_data = $_POST;
 
-$required_fields = ["DATA", "product", "VL", "PG", "PR", "SG", "GL"];
+$required_fields = ["Date", "product_id", "inicial", "produced", "sold", "damaged", "closed"];
 
 $validData = true;
 
@@ -18,7 +18,32 @@ foreach ($required_fields as $value) {
 }
 if (!$validData)
 	return;
-//
+
+@include_once('app/database.php');
+
+$query = "INSERT INTO `bakery_products_history` (
+		`Date`, 
+		`product_id`,
+		`inicial`, 
+		`produced`, 
+		`sold`, 
+		`damaged`, 
+		`closed`) 
+		VALUES (
+		".$new_data['Date'].",
+		".$new_data['product_id'].",
+		".$new_data['inicial'].",
+		".$new_data['produced']. ",
+		".$new_data['sold']. ",
+		".$new_data['damaged'].",
+		".$new_data['closed'].")";
+die($query);
+
+$result = db_query($query);
+
+print_r($result);
+;
+/*//
 $existing_data = json_decode (file_get_contents('data/bakery-data.json'));
 $existing_data = objectToArray($existing_data);
 
@@ -77,28 +102,4 @@ function createNewProduct($existing_data, $new_data)
 		];
 	return$existing_data;
 }
-
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<a href="index.php">Duomenys sekmingai įvesti, galite grįžti atgal</a>
-
-	</br>
-
-<script language="javascript" type="text/javascript">
-var d = new Date();
-
-var day=new Array("Sekmadienis","Pirmadienis","Antradienis","Trečiadienis","ketvirtadienis","Penktadienis","Šeštadienis");
-
-var month=new Array("01","02","03","04","05","06","07","08","09","10","11","12");
-
-document.write(day[d.getDay()] + " " + d.getFullYear() + "-" + month[d.getMonth()] + "-" + d.getDate());
-</script>
-
-</body>
-</html>
+*/
