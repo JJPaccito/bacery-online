@@ -31,9 +31,6 @@ function db_insertQuery(string $tableName, array $data, bool $uuid = false) : st
 {
 	if ($uuid)
 		$data['id'] = uniqid(36);
-	
-	print_r($data);
-
 	$keys = $values = '';
 	foreach ($data as $key => $value) {
 		$keys .="`$key`, ";
@@ -41,8 +38,6 @@ function db_insertQuery(string $tableName, array $data, bool $uuid = false) : st
 	}
 	$keys = rtrim($keys, ", ");
 	$values = rtrim($values, ", ");
-
 	$query = "INSERT INTO `$tableName` ($keys) VALUES ($values)";
-
-	die($query);
+	return($query);
 }
