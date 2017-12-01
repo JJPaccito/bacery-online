@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 
 	</form>
-	<a href="index.php">Grįžti į pagrindinį puslapį</a>
+	<a href="index.php">Įvesti naujus duomenis</a>
 </head>
 </body>
 </html>

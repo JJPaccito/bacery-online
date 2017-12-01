@@ -1,44 +1,37 @@
 <?php
 
-$days = $keys =''; //kodel yra sis uzrasas? ir ka jis reiskia? kokios jo funkcijos?
-$rows = []; 
+$rows = $days =[]; //kodel yra sis uzrasas? ir ka jis reiskia? kokios jo funkcijos?
+$keys ='';
 
-ksort($DATA);
-
-$product_name = json_decode(file_get_contents('data/product_name.json'), true );
-
-	foreach ($data as $key => $value) {
-
-		$days .= "<th colspan=\"5\">$key</th>";
-		$keys .= "<th>VL</th><th>PG</th><th>PR</th><th>SG</th><th>GL</th>";
-
-		foreach ($product_name as $key => $name) {
-
-			if (!isset($rows[$key]))		//tikrina ar toks kintamasis [$name] egzistuoja
-			{
-				$rows[$key] = "<td>$name</td>";
-			}
-
-			if (isset($value[$key])) 
-			{
-				foreach ($value[$key] as $amount) {
-
-					$rows[$key] .= "<td>$amount</td>";
-				}
-			}
-			else
-			{
-				$rows[$key] .= "<td></td><td></td><td></td><td></td><td></td>";
-			}
-		}
+foreach ($products as $value) 
+{
+	if (!isset($rows[$value['id']])) {
+		$rows[$value['id']] = '<td>' . $value['name'] . '</td>';
 	}
+}
+foreach ($productsHistory as $value) 
+{
+	if (!isset ($days[$value['date']])) 
+	{
+		$days[$value['date']] = $value['date'];
+		$keys .= "<th>VL</th><th>PG</th><th>PR</th><th>SG</th><th>GL</th>";
+	}
+	$rows[$value['product_id']] .= '<td>' . $value['inicial'] . '</td>'; 
+	$rows[$value['product_id']] .= '<td>' . $value['produced'] . '</td>'; 
+	$rows[$value['product_id']] .= '<td>' . $value['sold'] . '</td>'; 
+	$rows[$value['product_id']] .= '<td>' . $value['damaged'] . '</td>'; 
+	$rows[$value['product_id']] .= '<td>' . $value['closed'] . '</td>'; 
+}
+
 ?>
 <table>
 		<thead>
 			<tr>
 				<th rowspan="2">Pavadinimas</th>
 				<?php
-					echo $days;
+					foreach ($days as $date) {
+						echo '<th colspan="5">' . $date . '</th>';
+					}
 				?>
 			</tr>
 			<tr>
@@ -49,7 +42,8 @@ $product_name = json_decode(file_get_contents('data/product_name.json'), true );
 		</thead>
 			<tbody>
 				<?php
-					foreach ($rows as $row) {
+					foreach ($rows as $row) 
+					{
 						echo '<tr>' . $row . '</tr>';
 					}
 				?>
