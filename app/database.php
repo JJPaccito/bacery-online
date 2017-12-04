@@ -1,5 +1,4 @@
 <?php
-
 function db_connect ()
 {
 	$servername = 'localhost';
@@ -16,7 +15,6 @@ function db_connect ()
 	$conn->set_charset('utf8mb4');
 	return $conn;
 }
-
 function db_query(string $query)
 {
 	$conn = db_connect();
@@ -24,8 +22,6 @@ function db_query(string $query)
 	$conn->close();
 	return $result;
 }
-
-
 // duomenu ikelimas 
 function db_insertQuery(string $tableName, array $data, bool $uuid = false) : string
 {

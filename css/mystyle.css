@@ -1,25 +1,21 @@
 body {
     background-color: white;
 }
-
 h1 {
     color: navy;
     text-align: center;
 }
-
 table, tr, th, td {
     border: 1px solid black;
     background: lightblue;
     width: 100%;
     border-spacing: 0px;
+    text-align: center;
 }
-
-
 .button_class
 {
 	margin: 20px;
 }
-
 .fomr-label
 {
 	width: 100px;

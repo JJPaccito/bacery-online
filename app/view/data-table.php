@@ -1,8 +1,6 @@
 <?php
-
 $rows = $days =[];
 $keys ='';
-
 foreach ($products as $value) 
 {
 	if (!isset($rows[$value['id']])) {
@@ -10,7 +8,6 @@ foreach ($products as $value)
 		$rows[$value['id']]['name'] = '<td>' . $value['name'] . '</td>';
 	}
 }
-
 foreach ($productsHistory as $value) 
 {
 	if (!isset ($days[$value['date']])) 
@@ -23,9 +20,6 @@ foreach ($productsHistory as $value)
 		}
 	}
 	$rows[$value['product_id']][$value['date']] = '<td>' . $value['inicial'] . '</td>' . '<td>' . $value['produced'] . '</td>' .'<td>' . $value['sold'] . '</td>' .'<td>' . $value['damaged'] . '</td>' . '<td>' . $value['closed'] . '</td>';
-// print_r($value);
-// print_r($rows);
-// die();
 }
 ?>
 <table>
