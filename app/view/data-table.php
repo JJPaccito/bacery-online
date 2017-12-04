@@ -1,6 +1,6 @@
 <?php
 
-$rows = $days =[]; //kodel yra sis uzrasas? ir ka jis reiskia? kokios jo funkcijos?
+$rows = $days =[];
 $keys ='';
 
 foreach ($products as $value) 
@@ -21,14 +21,12 @@ foreach ($productsHistory as $value)
 		{
 			$product[$value['date']] = '<th></th><th></th><th></th><th></th><th></th>';
 		}
-			/*$rows[$value['product_id']] .= '<td>' . $value['inicial'] . '</td>'; 
-			$rows[$value['product_id']] .= '<td>' . $value['produced'] . '</td>'; 
-			$rows[$value['product_id']] .= '<td>' . $value['sold'] . '</td>'; 
-			$rows[$value['product_id']] .= '<td>' . $value['damaged'] . '</td>'; 
-			$rows[$value['product_id']] .= '<td>' . $value['closed'] . '</td>'; */
 	}
+	$rows[$value['product_id']][$value['date']] = '<td>' . $value['inicial'] . '</td>' . '<td>' . $value['produced'] . '</td>' .'<td>' . $value['sold'] . '</td>' .'<td>' . $value['damaged'] . '</td>' . '<td>' . $value['closed'] . '</td>';
+// print_r($value);
+// print_r($rows);
+// die();
 }
-
 ?>
 <table>
 		<thead>
@@ -59,4 +57,3 @@ foreach ($productsHistory as $value)
 				?>
 			</tbody>
 </table>
-
