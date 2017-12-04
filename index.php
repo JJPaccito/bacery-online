@@ -1,10 +1,13 @@
 <?php
-
 include_once('app\dto\bun.php');
 use app\dto\Bun;
-$bun = new Bun();
-$bun->name;
+use app\dto\Strawberry;
+$bun = new Strawberry();
+$bun->;
 ?>
+
+
+
 
 
 <!-- <!DOCTYPE html>
@@ -19,7 +22,7 @@ $bun->name;
 <?php  
 // @include_once('app/app.php');
 ?>
-</br>
+<!--</br>
 <script language="javascript" type="text/javascript">
 var d = new Date();
 var day=new Array("Sekmadienis","Pirmadienis","Antradienis","Trečiadienis","ketvirtadienis","Penktadienis","Šeštadienis");

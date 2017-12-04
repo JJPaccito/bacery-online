@@ -9,6 +9,8 @@ class Bun
 	public $ean;
 	public function __construct()
 	{
-		echo "BUN created";
+		echo "bun created";
 	}
 };
+?>
+
