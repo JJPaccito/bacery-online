@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+
+include_once('app\dto\bun.php');
+use app\dto\Bun;
+$bun = new Bun();
+$bun->name;
+?>
+
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<title>Bacery-online</title>
@@ -8,7 +17,7 @@
 <body>
 	<a href="new.php">Įvesti duomenis</a>
 <?php  
-@include_once('app/app.php');
+// @include_once('app/app.php');
 ?>
 </br>
 <script language="javascript" type="text/javascript">
@@ -18,4 +27,4 @@ var month=new Array("01","02","03","04","05","06","07","08","09","10","11","12")
 document.write(day[d.getDay()] + " " + d.getFullYear() + "-" + month[d.getMonth()] + "-" + d.getDate());
 </script>
 </body>
-</html>
+</html>  -->

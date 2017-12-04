@@ -1,20 +1,14 @@
 <?php
+namespace app\dto;
 class Bun
 {
-	public function __construct ()
+	public $name;
+	public $id;
+	public $salePrice;
+	public $weight;
+	public $ean;
+	public function __construct()
 	{
-		echo 'hello' . "\r\n";
+		echo "BUN created";
 	}
-}
-
-$bun = new Bun();
-$bun = new Bun();
-$bun = new Bun();
-$bun = new Bun();
-$bun = new Bun();
-$bun = new Bun();
-$bun = new Bun();
-$bun = new Bun();
-$bun = new Bun();
-$bun = new Bun();
-$bun = new Bun();
+};
